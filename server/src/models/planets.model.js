@@ -13,16 +13,6 @@ function isHabitablePlanets(planet) {
   );
 }
 
-/*
- const promise = new Promise((resolve, reject) => {
-    resolve(42);
- });
- promise.then((results) => {
-
-});
-const results = await promise;
-console.log(results);
-*/
 function loadPlanetsData() {
   return new Promise((resolve, rejects) => {
     fs.createReadStream(
@@ -51,7 +41,11 @@ function loadPlanetsData() {
   });
 }
 
+function getAllPlanets() {
+  return habitablePlanets;
+}
+
 module.exports = {
   loadPlanetsData,
-  planets: habitablePlanets,
+  getAllPlanets,
 };
